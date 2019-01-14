@@ -17,7 +17,7 @@
   </node>
 
   <node unless="$(arg nodelet)"
-        name="$(anon realtime_urdf_filter)"
+        name="realtime_urdf_filter"
         pkg="realtime_urdf_filter" type="realtime_urdf_filter"
         output="screen" >
     <remap from="~input_depth" to="$(arg input_depth)"/>

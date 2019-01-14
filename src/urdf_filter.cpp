@@ -307,7 +307,7 @@ void RealtimeURDFFilter::filter_callback
   if (robot_mask_pub_.getNumSubscribers() > 0)
   {
     cv::Mat mask_image (height_, width_, CV_8UC1, robot_mask_);
-    cv::threshold(mask_image, mask_image, 254, 255, 0);
+    cv::threshold(mask_image, mask_image, 254, 255, cv::THRESH_BINARY_INV);
     cv_bridge::CvImage out_mask;
     out_mask.header = ros_depth_image->header;
     out_mask.encoding = sensor_msgs::image_encodings::MONO8;
